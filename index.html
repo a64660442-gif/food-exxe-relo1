@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food+ | Ресторан на Крестовском острове</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#D4AF37"/>
+                        <path d="M12 15L20 10L28 15V25L20 30L12 25V15Z" fill="white"/>
+                        <path d="M16 18L20 16L24 18V22L20 24L16 22V18Z" fill="#D4AF37"/>
+                        <circle cx="20" cy="20" r="2" fill="white"/>
+                    </svg>
+                    <span>FOOD+</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="#about" class="nav-link">О ресторане</a></li>
+                    <li><a href="#menu" class="nav-link">Меню</a></li>
+                    <li><a href="#delivery" class="nav-link">Доставка</a></li>
+                    <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                    <li class="nav-btn"><button class="btn btn-outline" id="reserveBtn">Бронь столика</button></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Открыть меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <a href="#" class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#D4AF37"/>
+                        <path d="M12 15L20 10L28 15V25L20 30L12 25V15Z" fill="white"/>
+                        <path d="M16 18L20 16L24 18V22L20 24L16 22V18Z" fill="#D4AF37"/>
+                        <circle cx="20" cy="20" r="2" fill="white"/>
+                    </svg>
+                    <span>FOOD+</span>
+                </a>
+                <button class="close-menu-btn" id="closeMenuBtn" aria-label="Закрыть меню">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="mobile-nav">
+                <li><a href="#about" class="mobile-nav-link">О ресторане</a></li>
+                <li><a href="#menu" class="mobile-nav-link">Меню</a></li>
+                <li><a href="#delivery" class="mobile-nav-link">Доставка</a></li>
+                <li><a href="#contacts" class="mobile-nav-link">Контакты</a></li>
+                <li><button class="btn btn-full" id="reserveBtnMobile">Бронь столика</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Видовой ресторан <span class="highlight">Food Exxe Relo</span> на Крестовском острове</h1>
+                    <p class="hero-subtitle">Исключительная кухня с видом на залив в самом сердце Санкт-Петербурга</p>
+                    <a href="#menu" class="btn btn-primary btn-large">
+                        <i class="fas fa-utensils"></i> Смотреть меню
+                    </a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <a href="#about" aria-label="Прокрутить вниз">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <h2 class="section-title">О ресторане</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Интерьер ресторана Food+" loading="lazy">
+                    </div>
+                    <div class="about-text">
+                        <p class="about-description">
+                            Sed vel ornare ut rhoncus, ac ut nibh. Amet at sit et nibh. In lectus phasellus non ornare eget velit. 
+                            Facilisi urna, tristique dui, rhoncus, dolor. Tincidunt enim gravida dignissim leo pulvinar sit volutpat nulla vestibulum.
+                        </p>
+                        <p class="about-description">
+                            Morbi pellentesque enim massa laoreet vel id. Lectus ac, facilisis neque turpis. Morbi massa enim nullam sem vehicula. 
+                            Amet quis pellentesque enim porttitor lectus interdum. Nisi, faucibus pharetra at porttitor.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature">
+                                <i class="fas fa-wine-glass-alt"></i>
+                                <h4>Эксклюзивная винная карта</h4>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-leaf"></i>
+                                <h4>Сезонные локальные продукты</h4>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-chef"></i>
+                                <h4>Шеф-повар с мишленовским опытом</h4>
+                            </div>
+                        </div>
+                        <div class="about-actions">
+                            <a href="#" class="btn btn-outline">Подробнее</a>
+                            <a href="#delivery" class="btn-link">
+                                Условия доставки <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delivery Section -->
+        <section class="section delivery-section" id="delivery">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Служба доставки</h2>
+                    <p class="section-subtitle">Быстрая доставка по Санкт-Петербургу и области</p>
+                </div>
+                
+                <div class="delivery-grid">
+                    <!-- Delivery Card 1 -->
+                    <div class="delivery-card">
+                        <div class="delivery-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="delivery-time">10 мин</div>
+                        <div class="delivery-location">
+                            из центра<br>
+                            <strong>Санкт-Петербурга</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Delivery Card 2 -->
+                    <div class="delivery-card">
+                        <div class="delivery-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="delivery-time">35 мин</div>
+                        <div class="delivery-location">
+                            из аэропорта<br>
+                            <strong>Пулково</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Delivery Card 3 -->
+                    <div class="delivery-card">
+                        <div class="delivery-icon">
+                            <i class="fas fa-subway"></i>
+                        </div>
+                        <div class="delivery-time">25 мин</div>
+                        <div class="delivery-location">
+                            из города<br>
+                            <strong>Зеленогорск</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Delivery Card 4 -->
+                    <div class="delivery-card">
+                        <div class="delivery-icon">
+                            <i class="fas fa-train"></i>
+                        </div>
+                        <div class="delivery-time">40 мин</div>
+                        <div class="delivery-location">
+                            из города<br>
+                            <strong>Павловск</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="delivery-info">
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Работаем без выходных</h4>
+                        <p>Доставка осуществляется с 9:30 до 22:00</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4>Бесплатная доставка</h4>
+                        <p>При заказе от 5000 рублей в пределах города</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-percent"></i>
+                        <h4>Скидки постоянным клиентам</h4>
+                        <p>Накопительная система скидок до 15%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="section menu-section" id="menu">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Меню</h2>
+                    <div class="menu-filters">
+                        <button class="filter-btn active" data-filter="all">Все</button>
+                        <button class="filter-btn" data-filter="breakfast">Завтраки</button>
+                        <button class="filter-btn" data-filter="salads">Салаты</button>
+                        <button class="filter-btn" data-filter="main">Основное</button>
+                    </div>
+                </div>
+                
+                <div class="menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-card" data-category="breakfast">
+                        <div class="menu-card-image">
+                            <img src="https://t4.ftcdn.net/jpg/06/05/83/35/360_F_605833578_EbcLZohjgPGAaRYUOrQF2Bn2DjApUedc.jpg" alt="Яичница-глазунья из трех яиц" loading="lazy">
+                            <div class="menu-card-badge">Хит</div>
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">суши и роллы ассорти</h3>
+                                <div class="menu-card-price">2500₽</div>
+                            </div>
+                            <p class="menu-card-description">ассорти ролов и суш из свежих продуктов</p>
+                            <div class="menu-card-details">
+                                <span class="menu-card-weight"><i class="fas fa-weight"></i> 700 г</span>
+                                <span class="menu-card-time"><i class="fas fa-clock"></i> 30 мин</span>
+                            </div>
+                            <div class="menu-card-actions">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" aria-label="Уменьшить количество">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="quantity-btn plus" aria-label="Увеличить количество">+</button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-item="Суши и роллы ассорти" data-price="2500">
+                                    <i class="fas fa-shopping-cart"></i> В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 2 -->
+                    <div class="menu-card" data-category="breakfast">
+                        <div class="menu-card-image">
+                            <img src="https://avatars.mds.yandex.net/get-shedevrum/12155741/b43a34e6dcab11eeac8e9e327a4c855e/orig" alt="Каша с ягодами и кедровыми орехами" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Каша с ягодами и кедровыми орехами</h3>
+                                <div class="menu-card-price">1000 ₽</div>
+                            </div>
+                            <p class="menu-card-description">Овсяная каша на миндальном молоке с сезонными ягодами</p>
+                            <div class="menu-card-details">
+                                <span class="menu-card-weight"><i class="fas fa-weight"></i> 450 г</span>
+                                <span class="menu-card-time"><i class="fas fa-clock"></i> 10 мин</span>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-item="Каша с ягодами и кедровыми орехами" data-price="1000">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 3 -->
+                    <div class="menu-card" data-category="breakfast">
+                        <div class="menu-card-image">
+                            <img src="https://avatars.mds.yandex.net/i?id=0b024f4890a4779861c636f82d16f6bbb8a28736-4536963-images-thumbs&n=13" alt="Круавель" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Круавель</h3>
+                                <div class="menu-card-price">500 ₽</div>
+                            </div>
+                            <p class="menu-card-description">Слоеный круассан с начинкой на выбор: шоколад, миндаль или сыр</p>
+                            <div class="menu-card-details">
+                                <span class="menu-card-weight"><i class="fas fa-weight"></i> 250 г</span>
+                                <span class="menu-card-time"><i class="fas fa-clock"></i> 15 мин</span>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-item="Круавель" data-price="500">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 4 -->
+                    <div class="menu-card" data-category="breakfast">
+                        <div class="menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1410&q=80" alt="Яйцо Бенедикт с лососем" loading="lazy">
+                            <div class="menu-card-badge">Новинка</div>
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Яйцо Бенедикт с лососем</h3>
+                                <div class="menu-card-price">1200 ₽</div>
+                            </div>
+                            <p class="menu-card-description">Яйцо пашот, слабосоленый лосось, голландский соус на бриоше</p>
+                            <div class="menu-card-details">
+                                <span class="menu-card-weight"><i class="fas fa-weight"></i> 460 г</span>
+                                <span class="menu-card-time"><i class="fas fa-clock"></i> 25 мин</span>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-item="Яйцо Бенедикт с лососем" data-price="1200">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 5 -->
+                    <div class="menu-card" data-category="salads">
+                        <div class="menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Кофб-салат с лососем" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">салат с лососем</h3>
+                                <div class="menu-card-price">1450 ₽</div>
+                            </div>
+                            <p class="menu-card-description">Свежий лосось, авокадо, киноа, руккола, томаты черри, лимонный соус</p>
+                            <div class="menu-card-details">
+                                <span class="menu-card-weight"><i class="fas fa-weight"></i> 660 г</span>
+                                <span class="menu-card-time"><i class="fas fa-clock"></i> 30 мин</span>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-item="Салат с лососем" data-price="1450">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 6 -->
+                    <div class="menu-card" data-category="salads">
+                        <div class="menu-card-image">
+                            <img src="https://avatars.mds.yandex.net/i?id=81f5b2b8c51521c0405652c5b4d30ae0c63f86c7-11939057-images-thumbs&n=13" alt="Кофб-салат с креветками" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">салат с креветками</h3>
+                                <div class="menu-card-price">1550 ₽</div>
+                            </div>
+                            <p class="menu-card-description">Тигровые креветки, манго, авокадо, микс салатов, соус манго-чили</p>
+                            <div class="menu-card-details">
+                                <span class="menu-card-weight"><i class="fas fa-weight"></i> 750 г</span>
+                                <span class="menu-card-time"><i class="fas fa-clock"></i> 20 мин</span>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-item="Салат с креветками" data-price="1550">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-cta">
+                    <a href="#contacts" class="btn btn-secondary btn-large">
+                        <i class="fas fa-phone-alt"></i> Заказать доставку
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacts Section -->
+        <section class="section contacts-section" id="contacts">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Контакты</h2>
+                    <p class="section-subtitle">Приезжайте в гости или заказывайте доставку</p>
+                </div>
+                
+                <div class="contacts-content">
+                    <div class="contacts-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Адрес</h4>
+                                <p>Санкт-Петербург, Северная дорога, 11</p>
+                                <p class="contact-note">На Крестовском острове, с видом на Финский залив</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Телефон</h4>
+                                <p>+7 (993) 777-77-77</p>
+                                <p class="contact-note">Для бронирования столиков и заказов доставки</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Время работы</h4>
+                                <p><strong>Вск-Чт:</strong> с 9:00 до 22:00</p>
+                                <p><strong>Пт-Сб:</strong> с 9:00 до 22:00</p>
+                                <p class="contact-note">Кухня работает до 22:15</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-actions">
+                            <button class="btn btn-primary" id="openMapBtn">
+                                <i class="fas fa-map"></i> Открыть карту
+                            </button>
+                            <button class="btn btn-outline" id="askQuestionBtn">
+                                <i class="fas fa-question-circle"></i> Задать вопрос
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="contacts-map" id="mapContainer">
+                        <div class="map-placeholder">
+                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Карта расположения ресторана" loading="lazy">
+                            <div class="map-overlay" id="mapOverlay">
+                                <button class="btn btn-outline-light close-map-btn" id="closeMapBtn">
+                                    <i class="fas fa-times"></i> Закрыть карту
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Modal -->
+        <div class="cart-modal" id="cartModal">
+            <div class="cart-modal-content">
+                <div class="cart-modal-header">
+                    <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+                    <button class="close-cart-btn" id="closeCartBtn" aria-label="Закрыть корзину">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="cart-modal-body" id="cartItems">
+                    <!-- Cart items will be inserted here -->
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-basket"></i>
+                        <p>Ваша корзина пуста</p>
+                    </div>
+                </div>
+                <div class="cart-modal-footer">
+                    <div class="cart-total">
+                        <span>Итого:</span>
+                        <span id="cartTotalPrice">0 ₽</span>
+                    </div>
+                    <button class="btn btn-primary btn-large" id="checkoutBtn" disabled>
+                        <i class="fas fa-check"></i> Оформить заказ
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reservation Modal -->
+        <div class="modal" id="reservationModal">
+            <div class="modal-content">
+                <button class="close-modal-btn" id="closeModalBtn" aria-label="Закрыть окно">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-header">
+                    <h2 class="modal-title">
+                        <i class="fas fa-calendar-alt"></i> Забронировать столик
+                    </h2>
+                    <p class="modal-subtitle">Оставьте заявку и мы свяжемся с вами для подтверждения</p>
+                </div>
+                <form class="reservation-form" id="reservationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Имя *</label>
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" placeholder="+7 (___) __-__-__" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests">Количество гостей *</label>
+                            <select id="guests" required>
+                                <option value="" disabled selected>Выберите количество</option>
+                                <option value="1">1 гость</option>
+                                <option value="2">2 гостя</option>
+                                <option value="3">3 гостя</option>
+                                <option value="4">4 гостя</option>
+                                <option value="5">5+ гостей</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Дата *</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Время *</label>
+                            <input type="time" id="time" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Комментарий (необязательно)</label>
+                        <textarea id="comments" placeholder="Особые пожелания, праздник и т.д." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-check"></i> Забронировать
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Question Modal -->
+        <div class="modal" id="questionModal">
+            <div class="modal-content">
+                <button class="close-modal-btn" id="closeQuestionModalBtn" aria-label="Закрыть окно">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-header">
+                    <h2 class="modal-title">
+                        <i class="fas fa-question-circle"></i> Задать вопрос
+                    </h2>
+                    <p class="modal-subtitle">Мы ответим в течение 15 минут</p>
+                </div>
+                <form class="question-form" id="questionForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="questionName">Имя *</label>
+                            <input type="text" id="questionName" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="questionPhone">Телефон *</label>
+                            <input type="tel" id="questionPhone" placeholder="+7 (___) __-__-__" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionEmail">Email</label>
+                        <input type="email" id="questionEmail" placeholder="Ваш email">
+                    </div>
+                    <div class="form-group">
+                        <label for="questionText">Ваш вопрос *</label>
+                        <textarea id="questionText" placeholder="Задайте ваш вопрос..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i> Отправить вопрос
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#D4AF37"/>
+                            <path d="M12 15L20 10L28 15V25L20 30L12 25V15Z" fill="white"/>
+                            <path d="M16 18L20 16L24 18V22L20 24L16 22V18Z" fill="#D4AF37"/>
+                            <circle cx="20" cy="20" r="2" fill="white"/>
+                        </svg>
+                        <span>FOOD+</span>
+                    </a>
+                    <p class="footer-description">
+                        Видовой ресторан на Крестовском острове с панорамным видом на Финский залив и изысканной кухней.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="VKontakte">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-heading">Навигация</h4>
+                    <ul>
+                        <li><a href="#about">О ресторане</a></li>
+                        <li><a href="#menu">Меню</a></li>
+                        <li><a href="#delivery">Доставка</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-heading">Информация</h4>
+                    <ul>
+                        <li><a href="#" id="privacyPolicyBtn">Политика конфиденциальности</a></li>
+                        <li><a href="#delivery">Условия доставки</a></li>
+                        <li><a href="#" id="termsBtn">Пользовательское соглашение</a></li>
+                        <li><a href="#" id="faqBtn">Частые вопросы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Подписка на новости</h4>
+                    <p>Узнавайте первыми о новых блюдах и специальных предложениях</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <span>Принимаем к оплате:</span>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa" title="Visa"></i>
+                        <i class="fab fa-cc-mastercard" title="MasterCard"></i>
+                        <i class="fab fa-cc-mir" title="Мир"></i>
+                        <i class="fas fa-mobile-alt" title="Онлайн-оплата"></i>
+                    </div>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Food Exxe Relo. Все права защищены.</p>
+                    <p>Сайт разработан: <a href="https://github.com/a64660442-gif" target="_blank" rel="noopener">Kirill</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <button class="floating-cart-btn" id="floatingCartBtn" aria-label="Открыть корзину">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Прокрутить наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
