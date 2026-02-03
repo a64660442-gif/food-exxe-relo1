@@ -1,4 +1,4 @@
-// DOM Elements
+
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const closeMenuBtn = document.getElementById('closeMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -26,22 +26,19 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const menuCards = document.querySelectorAll('.menu-card');
 const addToCartBtns = document.querySelectorAll('.add-to-cart');
 
-// State
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Initialize
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Update cart display
     updateCartDisplay();
     
-    // Set min date for reservation form to today
     const dateInput = document.getElementById('date');
     if (dateInput) {
         const today = new Date().toISOString().split('T')[0];
         dateInput.min = today;
     }
     
-    // Phone input mask
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
     phoneInputs.forEach(input => {
         input.addEventListener('input', function(e) {
@@ -51,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobile Menu
 mobileMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -62,7 +58,6 @@ closeMenuBtn.addEventListener('click', () => {
     document.body.style.overflow = 'auto';
 });
 
-// Close mobile menu when clicking on a link
 document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
@@ -70,7 +65,6 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
     });
 });
 
-// Reservation Modal
 function openReservationModal() {
     reservationModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -97,14 +91,12 @@ if (closeModalBtn) {
     closeModalBtn.addEventListener('click', closeReservationModal);
 }
 
-// Close modal when clicking outside
 reservationModal.addEventListener('click', (e) => {
     if (e.target === reservationModal) {
         closeReservationModal();
     }
 });
 
-// Question Modal
 function openQuestionModal() {
     questionModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -129,7 +121,6 @@ questionModal.addEventListener('click', (e) => {
     }
 });
 
-// Map Functionality
 if (openMapBtn) {
     openMapBtn.addEventListener('click', () => {
         mapOverlay.classList.add('active');
@@ -142,13 +133,10 @@ if (closeMapBtn) {
     });
 }
 
-// Cart Functionality
 function updateCartDisplay() {
-    // Update cart count
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
     
-    // Update cart items in modal
     if (cart.length === 0) {
         cartItems.innerHTML = `
             <div class="cart-empty">
@@ -164,7 +152,6 @@ function updateCartDisplay() {
     let cartHTML = '';
     let totalPrice = 0;
     
-    // Массив изображений для корзины (используем те же, что и в меню)
     const cartImages = [
         'https://t4.ftcdn.net/jpg/06/05/83/35/360_F_605833578_EbcLZohjgPGAaRYUOrQF2Bn2DjApUedc.jpg',
         'https://avatars.mds.yandex.net/get-shedevrum/12155741/b43a34e6dcab11eeac8e9e327a4c855e/orig',
@@ -178,7 +165,6 @@ function updateCartDisplay() {
         const itemTotal = item.price * item.quantity;
         totalPrice += itemTotal;
         
-        // Используем соответствующее изображение или дефолтное
         const imageUrl = cartImages[index % cartImages.length] || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80';
         
         cartHTML += `
@@ -206,7 +192,6 @@ function updateCartDisplay() {
     cartTotalPrice.textContent = `${totalPrice} ₽`;
     checkoutBtn.disabled = false;
     
-    // Add event listeners to cart buttons
     document.querySelectorAll('.cart-item-quantity-btn.minus').forEach(btn => {
         btn.addEventListener('click', function() {
             const index = parseInt(this.dataset.index);
@@ -228,16 +213,13 @@ function updateCartDisplay() {
         });
     });
     
-    // Save cart to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 function addToCart(name, price) {
-    // Check if item already in cart
     const existingItemIndex = cart.findIndex(item => item.name === name);
     
     if (existingItemIndex !== -1) {
-        // Update quantity
         cart[existingItemIndex].quantity += 1;
     } else {
         // Add new item
@@ -250,7 +232,6 @@ function addToCart(name, price) {
     
     updateCartDisplay();
     
-    // Show success message
     showNotification(`${name} добавлен в корзину!`, 'success');
 }
 
@@ -270,14 +251,12 @@ function removeCartItem(index) {
     showNotification('Товар удален из корзины', 'info');
 }
 
-// Add to cart buttons
 addToCartBtns.forEach(btn => {
     btn.addEventListener('click', function() {
         const itemName = this.dataset.item;
         const itemPrice = parseInt(this.dataset.price);
         addToCart(itemName, itemPrice);
         
-        // Animate button
         this.innerHTML = '<i class="fas fa-check"></i> Добавлено';
         this.style.backgroundColor = '#28a745';
         
@@ -288,7 +267,6 @@ addToCartBtns.forEach(btn => {
     });
 });
 
-// Quantity selectors in menu cards
 document.querySelectorAll('.quantity-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const parent = this.closest('.quantity-selector');
@@ -305,7 +283,6 @@ document.querySelectorAll('.quantity-btn').forEach(btn => {
     });
 });
 
-// Cart Modal
 floatingCartBtn.addEventListener('click', () => {
     cartModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -323,7 +300,6 @@ cartModal.addEventListener('click', (e) => {
     }
 });
 
-// Checkout button
 checkoutBtn.addEventListener('click', () => {
     if (cart.length === 0) return;
     
@@ -334,7 +310,6 @@ checkoutBtn.addEventListener('click', () => {
     document.body.style.overflow = 'auto';
 });
 
-// Menu Filtering
 filterBtns.forEach(btn => {
     btn.addEventListener('click', function() {
         // Update active button
@@ -343,7 +318,6 @@ filterBtns.forEach(btn => {
         
         const filter = this.dataset.filter;
         
-        // Filter menu cards
         menuCards.forEach(card => {
             if (filter === 'all' || card.dataset.category === filter) {
                 card.style.display = 'block';
@@ -362,7 +336,6 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Form Submissions
 if (reservationForm) {
     reservationForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -376,13 +349,10 @@ if (reservationForm) {
             comments: document.getElementById('comments').value
         };
         
-        // In a real app, you would send this data to a server
         console.log('Reservation data:', formData);
         
-        // Show success message
         showNotification('Столик забронирован! Мы свяжемся с вами для подтверждения.', 'success');
         
-        // Reset form and close modal
         reservationForm.reset();
         closeReservationModal();
     });
@@ -399,37 +369,29 @@ if (questionForm) {
             question: document.getElementById('questionText').value
         };
         
-        // In a real app, you would send this data to a server
         console.log('Question data:', formData);
         
-        // Show success message
         showNotification('Вопрос отправлен! Мы ответим в течение 15 минут.', 'success');
         
-        // Reset form and close modal
         questionForm.reset();
         closeQuestionModal();
     });
 }
 
-// Newsletter Form
 const newsletterForm = document.getElementById('newsletterForm');
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const email = this.querySelector('input[type="email"]').value;
         
-        // In a real app, you would send this data to a server
         console.log('Newsletter subscription:', email);
         
-        // Show success message
         showNotification('Вы успешно подписались на рассылку!', 'success');
         
-        // Reset form
         this.reset();
     });
 }
 
-// Scroll to Top
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
         scrollToTopBtn.classList.add('visible');
@@ -445,7 +407,6 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
-// Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (window.pageYOffset > 50) {
@@ -455,7 +416,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -473,7 +433,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
             
-            // Close mobile menu if open
             if (mobileMenu.classList.contains('active')) {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = 'auto';
@@ -482,7 +441,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Notification System
 function showNotification(message, type = 'info') {
     // Create notification element
     const notification = document.createElement('div');
@@ -497,10 +455,8 @@ function showNotification(message, type = 'info') {
         </button>
     `;
     
-    // Add to page
     document.body.appendChild(notification);
     
-    // Add styles for notification
     if (!document.querySelector('#notification-styles')) {
         const style = document.createElement('style');
         style.id = 'notification-styles';
@@ -566,12 +522,10 @@ function showNotification(message, type = 'info') {
         document.head.appendChild(style);
     }
     
-    // Show notification
     setTimeout(() => {
         notification.classList.add('show');
     }, 10);
     
-    // Close button
     notification.querySelector('.notification-close').addEventListener('click', () => {
         notification.classList.remove('show');
         setTimeout(() => {
@@ -581,7 +535,6 @@ function showNotification(message, type = 'info') {
         }, 300);
     });
     
-    // Auto-remove after 5 seconds
     setTimeout(() => {
         if (notification.parentNode) {
             notification.classList.remove('show');
@@ -594,18 +547,14 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Privacy Policy Button (example)
 const privacyPolicyBtn = document.getElementById('privacyPolicyBtn');
 if (privacyPolicyBtn) {
     privacyPolicyBtn.addEventListener('click', (e) => {
         e.preventDefault();
         showNotification('Политика конфиденциальности открывается в новом окне.', 'info');
-        // In a real app, you would open the privacy policy page
-        // window.open('/privacy-policy', '_blank');
     });
 }
 
-// Lazy loading images
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
